@@ -1,0 +1,193 @@
+<!-- Elaborado por: -->
+<!-- Barojas Alcantar Jared Andrés -->
+<!-- Espinoza Bernal Daniel Antonio -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Alexia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body x-data="{tab:'contacto'}">
+  <header>
+    <div class="container header-container">
+      <div class="container">
+        <img style="border-radius: 50%;" src="https://chrissh84.github.io/coffee-shop/Images/Products-coffee3.jpg" alt="Logo cafe" width="100" height="100">
+        <div class="title-container">
+          <h1 class="title">Cafetería Alexia</h1>
+          <p class="muted">Café de especialidad y pan artesanal en Hermosillo.</p>
+        </div>
+      </div>
+      
+      <nav aria-label="Navegación principal" class="navbar">
+        <span class="navlink" @click="tab='menu'">Menú</span>
+        <span class="navlink" @click="tab='articulos'">Artículos</span>
+        <span class="navlink" @click="tab='galeria'">Galería</span>
+        <span class="navlink" @click="tab='contacto'">Contacto</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section x-show="tab=='menu'" id="menu" aria-labelledby="titulo-menu">
+      <h2 id="titulo-menu">Nuestro menú</h2>
+      <p class="muted">Bebidas y panes del día.</p>
+
+      <div class="grid grid-2">
+        <article class="container">
+          <div class="menu-item">
+            <h3>Espresso</h3>
+            <p>Extracción precisa, tueste medio.</p>
+            <table>
+              <thead>
+                <tr><th>Tamaño</th><th>Precio</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Simple</td><td>$35</td></tr>
+                <tr><td>Doble</td><td>$45</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img style="border-radius: 50%;" src="https://champsdiet.com/wp-content/uploads/2023/05/how-to-make-espresso.jpg" alt="Espresso servido en taza de cerámica" width="300" height="300">
+            <figcaption class="img-label">Espresso simple</figcaption>
+          </figure>
+        </article>
+
+        <article class="container">
+          <div class="menu-item">
+            <h3>Latte</h3>
+            <p>Suave, con leche vaporizada.</p>
+            <table>
+              <thead>
+                <tr><th>Tamaño</th><th>Precio</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>12 oz</td><td>$55</td></tr>
+                <tr><td>16 oz</td><td>$65</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img style="border-radius: 50%;" src="https://images.alphacoders.com/749/thumb-1920-749235.jpg" alt="Latte" width="300" height="300">
+            <figcaption class="img-label">Latte clásico</figcaption>
+          </figure>
+        </article>
+
+        <article class="container">
+          <div class="menu-item">
+            <h3>Croissant</h3>
+            <p>Hojaldre crujiente y mantequilla de alta calidad.</p>
+            <table>
+              <thead>
+                <tr><th>Variante</th><th>Precio</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Clásico</td><td>$38</td></tr>
+                <tr><td>Chocolate</td><td>$45</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure>
+            <img style="border-radius: 50%;" src="https://tse2.mm.bing.net/th/id/OIP.ZOVhP20rGllSZMqF4fO5kQHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="crosa" width="300" height="300">
+            <figcaption class="img-label">Croissant clásico</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section x-show="tab=='articulos'" id="articulos" aria-labelledby="titulo-articulos">
+      <h2 id="titulo-articulos">Artículos del blog</h2>
+      <div class="grid grid-2">
+        <article>
+          <h3>¿Qué es un espresso perfecto?</h3>
+          <p class="muted"><time datetime="2025-08-20">agosto de 2025</time> · 3 min de lectura</p>
+          <p>Un espresso perfecto equilibra aroma, cuerpo y acidez. Factores clave incluyen molienda, dosis, temperatura y tiempo de extracción.</p>
+          <p><a href="https://coffeelounge.delonghi.com/es-es/discover/como-reconocer-un-espresso-perfecto/">Leer más</a></p>
+        </article>
+
+        <article>
+          <h3>De la finca a tu taza</h3>
+          <p class="muted"><time datetime="2025-08-10">agosto de 2025</time> · 4 min de lectura</p>
+          <p>El viaje del café inicia con la selección de granos, seguido de procesos de secado, tueste y extracción. La trazabilidad mejora la calidad.</p>
+          <p><a href="https://somosgrano.com/blogs/magazine/el-viaje-de-una-taza-de-cafe-de-la-finca-a-tu-taza">Leer más</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section x-show="tab=='galeria'" id="galeria" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria">Galería</h2>
+      <div class="grid grid-3">
+        <figure>
+          <img src="https://picsum.photos/seed/barista/480/320" alt="Barista preparando café con máquina espresso">
+          <figcaption class="img-label">Barista en acción</figcaption>
+        </figure>
+        <figure>
+          <img src="https://picsum.photos/seed/terrace/480/320" alt="Terraza del café con mesas y plantas">
+          <figcaption class="img-label">Nuestra terraza</figcaption>
+        </figure>
+        <figure>
+          <img src="https://picsum.photos/seed/beans/480/320" alt="Granos de café tostados en primer plano">
+          <figcaption class="img-label">Granos seleccionados</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section x-show="tab=='contacto'" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contact-container">
+        <div class="form-card">
+          <h2 id="titulo-contacto">Contáctanos</h2>
+          <form action="" method="post">
+            <div>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div>
+              <label for="correo">Correo</label>
+              <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+            <div>
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required maxlength="300"></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+            <p class="muted">*Ejemplo educativo: este formulario no envía datos reales.</p>
+          </form>
+        </div>
+        <div class="contact-image"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>
+        <p>© <span id="anio">2025</span> Cafetería Alexia · Todos los derechos reservados</p>
+        <nav aria-label="Navegación secundaria">
+          <ul>
+            <li><a href="https://paint.toys/calligram/">Aviso de privacidad</a></li>
+            <li><a href="https://optical.toys/">Términos de uso</a></li>
+          </ul>
+        </nav>
+        <small class="muted">Sitio de ejemplo.</small>
+      </div>
+      <div>
+        <aside aria-label="Información adicional">
+          <h4>Horarios y ubicación</h4>
+          <address>
+            Blvd. Universidad 76, Hermosillo, Sonora<br>
+            Lun–Sáb: 8:00–20:00 · Dom: 9:00–14:00
+          </address>
+          <p class="muted">Wi‑Fi gratis · Pet friendly · Terraza</p>
+        </aside>
+      </div>
+      <img style="border-radius: 50%;" src="https://png.pngtree.com/png-clipart/20230510/original/pngtree-cute-coffee-cup-png-image_9156461.png" alt="tazita" width="100" height="100">
+    </div>
+  </footer>
+</body>
+</html>
