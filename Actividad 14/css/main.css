@@ -190,7 +190,7 @@ footer {
     }
 }
 
-.party-mode body {
+body.party-mode {
     font-family: 'Comic Sans MS', cursive, sans-serif !important;
     background-color: #000;
     background-image: url('../media/fiesta.gif');
@@ -252,7 +252,6 @@ footer {
     width: 120px;
     height: 120px;
     z-index: 9999;
-    border: 3px solid hotpink;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 2s ease-in-out;
