@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    
+    <title>¡Estás Invitado!</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">Validando asistencia...</div>
+    </div>
+
+    <audio id="party-audio" src="media/nene_malo.mp3" loop></audio>
+
+    <div class="container">
+        
+        <header>
+            <h1 id="event-title">Estás Invitado</h1>
+            <h2 id="event-subtitle">a la fiesta del año</h2>
+        </header>
+
+        <section class="invitation-text">
+            <p>Con motivo de celebrar <strong id="event-reason">mi cumpleaños</strong>, me gustaría invitarte a festejar conmigo.</p>
+            <p>La cita es en <strong id="event-location">mi casa</strong>.</p>
+        </section>
+
+        <section class="countdown">
+            <h3>Faltan:</h3>
+            <div id="timer">
+                <div class="time-box"><span id="days">00</span> Días</div>
+                <div class="time-box"><span id="hours">00</span> Horas</div>
+                <div class="time-box"><span id="minutes">00</span> Minutos</div>
+                <div class="time-box"><span id="seconds">00</span> Segundos</div>
+            </div>
+        </section>
+
+        <section class="rsvp">
+            <h3>¿Vienes?</h3>
+            <form id="rsvp-form">
+                <input type="text" id="guest-name" placeholder="Tu nombre completo" required>
+                <input type="email" id="guest-email" placeholder="Tu correo" required>
+                <button type="submit" id="submit-btn">¡Quiero Asistir!</button>
+                
+                <div id="dynamic-message">
+                    ¡OBVIO QUE SÍ! ¡TE VEO ALLÁ! 🥳
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Créditos: [Tu Nombre], [Nombre 2], [Nombre 3] | Grupo: [Tu Grupo] | Fecha: [Hoy]</p>
+        <a href="config.html" class="config-link">⚙️</a>
+    </footer>
+
+    <img src="media/meme1.gif" class="floating-meme" alt="meme flotante">
+    <img src="media/meme2.gif" class="floating-meme" alt="meme flotante 2">
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración del Evento</title>
+    <link rel="stylesheet" href="css/config.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>⚙️ Configuración del Evento</h1>
+        <p>Llena los datos de tu fiesta. Se guardarán en este navegador.</p>
+
+        <form id="config-form">
+            <div class="form-group">
+                <label for="nombre">Nombre del Festejado(a):</label>
+                <input type="text" id="nombre" placeholder="Ej: El Brayan" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad que cumple:</label>
+                <input type="number" id="edad" placeholder="Ej: 25" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha y Hora del Evento:</label>
+                <input type="datetime-local" id="fecha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lugar">Lugar del Evento:</label>
+                <input type="text" id="lugar" placeholder="Ej: En la casa de mi tía" required>
+            </div>
+
+            <button type="submit">Guardar Configuración</button>
+        </form>
+    </div>
+
+    <script src="js/config.js"></script>
+</body>
+</html>

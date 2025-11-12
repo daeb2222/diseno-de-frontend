@@ -1,0 +1,263 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    background-color: #fdfaf6;
+    color: #4a4a4a;
+    text-align: center;
+    transition: background-color 0.5s ease;
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #777;
+}
+
+.invitation-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.countdown {
+    margin: 2.5rem 0;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.time-box {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: 5px;
+    min-width: 80px;
+}
+
+.time-box span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+#rsvp-form input {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#rsvp-form button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#rsvp-form button:hover {
+    background-color: #1558b0;
+    transform: scale(1.05);
+}
+
+#dynamic-message {
+    display: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green;
+    margin-top: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.config-link {
+    text-decoration: none;
+    color: #999;
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    opacity: 0.3;
+}
+.config-link:hover {
+    opacity: 1;
+}
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9998;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px solid #555;
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
+    animation: pulse 1.5s linear infinite;
+}
+
+@keyframes color-change {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: yellow; }
+    100% { color: magenta; }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    100% { transform: translate(1px, 1px) rotate(0deg); }
+}
+
+@keyframes expand-in {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.party-mode body {
+    font-family: 'Comic Sans MS', cursive, sans-serif !important;
+    background-color: #000;
+    background-image: url('../media/fiesta.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.party-mode .container {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px 10px #fff;
+    border: 5px dashed red;
+    animation: expand-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+.party-mode h1,
+.party-mode h2,
+.party-mode h3,
+.party-mode p,
+.party-mode .time-box span,
+.party-mode footer {
+    font-family: 'Comic Sans MS', cursive, sans-serif !important;
+    animation: color-change 1s infinite;
+}
+
+.party-mode h1 {
+    font-size: 5rem;
+    animation: shake 0.5s infinite, color-change 1s infinite;
+}
+
+.party-mode #timer {
+    gap: 0.5rem;
+}
+
+.party-mode .time-box {
+    background-color: #333;
+    animation: shake 1s infinite;
+}
+
+.party-mode #rsvp-form button {
+    background-color: green;
+    font-size: 1.5rem;
+    animation: shake 0.3s infinite;
+}
+
+.party-mode #dynamic-message {
+    display: block;
+    animation: color-change 1s infinite;
+}
+
+.party-mode #guest-name,
+.party-mode #guest-email {
+    display: none;
+}
+
+.floating-meme {
+    display: none;
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    z-index: 9999;
+    border: 3px solid hotpink;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 2s ease-in-out;
+}
+
+.party-mode .floating-meme {
+    display: block;
+}
