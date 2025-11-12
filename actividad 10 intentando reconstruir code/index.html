@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Daniel Espinoza</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DANIEL ESPINOZA</h1>
+      <p class="muted">
+        Estudiante de Ingeniería en Sistemas de Información | Prácticas
+        profesionales en Dräger
+      </p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#galeria">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#intereses">Intereses</a></li>
+      </ul>
+    </nav>
+
+    <section id="welcome" class="welcome-container"></section>
+
+    <section id="inicio">
+      <h2>Sobre mí</h2>
+      <p>
+        Me apasiona aprender y aplicar mis conocimientos en proyectos
+        interdisciplinarios. Me interesa especialmente la combinación de
+        software, datos y soluciones que impacten la vida real.
+      </p>
+
+      <button id="botonDescarga">Descargar CV</button>
+
+      <h3>Mis pasatiempos</h3>
+      <ul>
+        <li>Nadar</li>
+        <li>Viajar</li>
+        <li>Salir con amigos</li>
+        <li>Analizar y aprender sobre tecnología y ciencia de datos</li>
+      </ul>
+
+      <div class="grid-2">
+        <div>
+          <h3>Formación académica</h3>
+          <p>
+            <strong>Ago 2020 – Actualidad</strong><br />
+            Licenciatura en Sistemas de Información<br />
+            <span class="highlight">Universidad de Sonora</span>, México
+          </p>
+          <p>
+            <strong>Oct 2024 – Actualidad</strong><br />
+            Semestre de intercambio en
+            <span class="highlight">Informática</span><br />
+            dentro del programa <span class="highlight">KOSPIE</span> del
+            <span class="highlight">DAAD</span><br />
+            <span class="highlight">Universidad del Sarre</span>, Alemania
+          </p>
+        </div>
+        <div>
+          <h3>Experiencia</h3>
+          <p>
+            <strong>Abr 2025 – Sept 2025</strong><br />
+            Praktikant im Bereich
+            <span class="highlight">Software Engineering</span> –
+            <span class="highlight">Data Application</span><br />
+            <span class="highlight">Drägerwerk AG &amp; Co. KGaA</span>,
+            Lübeck, Deutschland
+          </p>
+          <p>
+            Desarrollo de
+            <span class="highlight">aplicaciones backend</span> en la nube,
+            configuración de <span class="highlight">CI/CD Pipelines</span> con
+            <span class="highlight">Azure DevOps</span>, trabajo en procesos de
+            desarrollo <span class="highlight">ágiles</span>, desarrollo y
+            evaluación de servidores de
+            <span class="highlight">protocolo de contexto de modelo</span> que
+            exponen <span class="highlight">APIs</span> para
+            <span class="highlight">modelos de IA</span>.<br />
+            <em>Tecnologías:</em> <span class="highlight">Azure</span>,
+            <span class="highlight">Python</span>,
+            <span class="highlight">MCP</span>,
+            <span class="highlight">Microsoft Azure Storage Explorer</span>,
+            <span class="highlight">Pandas</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería / Proyectos</h2>
+
+      <div id="carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070"
+              alt="Paisaje 1"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070"
+              alt="Paisaje 2"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=2070"
+              alt="Paisaje 3"
+            />
+          </div>
+        </div>
+        <button class="carousel-btn prev">&lt;</button>
+        <button class="carousel-btn next">&gt;</button>
+        <div class="carousel-indicators"></div>
+      </div>
+
+      <article>
+        <h3>Hackathon Hermosillo</h3>
+        <p>
+          Participé en un Hackathon local, donde mi equipo quedó finalistas de
+          SmartCity Hackathon 2024 con una propuesta de microcontroladores para
+          monitoreo de medidores de agua.
+        </p>
+      </article>
+
+      <article>
+        <h3>Startup de software</h3>
+        <p>
+          Formé parte de un proyecto startup donde aprendí sobre backend,
+          administración de proyectos y trato con clientes. Finalmente tuve que
+          dejar el proyecto, pero fue muy enriquecedor.
+        </p>
+      </article>
+
+      <h3>Tabla de habilidades</h3>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Habilidad</th>
+            <th>Nivel (1-5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Programación</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Data Science / Machine Learning</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>Trabajo en equipo</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Comunicación</td>
+            <td>4</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form>
+        <label for="nombre">Nombre:</label><br />
+        <input type="text" id="nombre" name="nombre" /><br /><br />
+        <label for="correo">Correo:</label><br />
+        <input type="email" id="correo" name="correo" /><br /><br />
+        <label for="mensaje">Mensaje:</label><br />
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea><br /><br />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>2025 Daniel Espinoza</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

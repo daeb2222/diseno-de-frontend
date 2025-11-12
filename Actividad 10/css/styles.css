@@ -1,0 +1,54 @@
+:root {
+  --custom-primary: #1e90ff; 
+  --custom-primary-darker: #0b60b0; 
+  --custom-light-blue: #a5e2ff; 
+  --site-bg: #e9f5f9; 
+}
+
+body {
+  background-color: var(--site-bg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.btn-custom {
+  background-color: var(--custom-primary);
+  border-color: var(--custom-primary);
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+  background-color: var(--custom-primary-darker);
+  border-color: var(--custom-primary-darker);
+  color: white;
+  transform: scale(1.03); 
+}
+
+.bg-custom-badge {
+  background-color: var(--custom-primary) !important; 
+  font-weight: 500;
+}
+
+
+h1, h2, h3 {
+  text-shadow: 2px 2px 8px var(--custom-light-blue);
+}
+
+h3 {
+  font-family: cursive; 
+  color: var(--custom-primary);
+}
+
+.bg-light-glass {
+  background-color: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover; 
+  filter: brightness(0.7); 
+}
