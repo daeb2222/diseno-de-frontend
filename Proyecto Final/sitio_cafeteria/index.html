@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Enchilado - Especialidad y Panadería</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body x-data="{ tab: 'menu', showBanner: true }" class="d-flex flex-column min-vh-100">
+
+  <header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class="navbar-brand d-flex align-items-center" href="#" @click.prevent="tab='menu'">
+        <img src="https://images.unsplash.com/vector-1753818884229-e6b6cb01b699?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Logo" width="50" height="50" class="rounded-circle me-2">
+        <div>
+          <h1 class="h5 mb-0">Café Enchilado</h1>
+          <small class="text-muted" style="font-size: 0.8rem; font-family: 'Lato', sans-serif;">Cafecito para despertar tempranito</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'menu' }" href="#" @click.prevent="tab='menu'">Menú</a></li>
+          <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'articulos' }" href="#" @click.prevent="tab='articulos'">Artículos</a></li>
+          <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'galeria' }" href="#" @click.prevent="tab='galeria'">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" :class="{ 'active': tab === 'contacto' }" href="#" @click.prevent="tab='contacto'">Ubicación y Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1 container py-5">
+    
+    <section x-show="tab=='menu'" x-transition.opacity>
+      <h2 class="section-title">Nuestro Menú</h2>
+      <p class="text-center text-muted mb-5">Pasa el cursor sobre las tarjetas para ver los detalles.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZXNwcmVzc298ZW58MHx8MHx8fDI%3D" alt="Espresso">
+                <div class="front-caption"><h3>Espresso</h3></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Espresso Intenso</h3>
+                <p>Granos únicos, notas picantes para despertar.</p>
+                <table class="table table-sm text-white">
+                  <tr><td>Simple</td><td>$35</td></tr>
+                  <tr><td>Doble (aguas)</td><td>$50</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Latte">
+                <div class="front-caption"><h3>Latte</h3></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Latte Cremoso</h3>
+                <p>Leche texturizada y sabor equilibrado.</p>
+                <table class="table table-sm text-white">
+                  <tr><td>Mediano</td><td>$55</td></tr>
+                  <tr><td>Grande</td><td>$75</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1681218079567-35aef7c8e7e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3JvaXNzYW50fGVufDB8fDB8fHwy" alt="Croissant">
+                <div class="front-caption"><h3>Croissant</h3></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Croissant</h3>
+                <p>Horneado a diario.</p>
+                <table class="table table-sm text-white">
+                  <tr><td>Clásico</td><td>$5</td></tr>
+                  <tr><td>Chocolate</td><td>$10</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" alt="Capuchino">
+                <div class="front-caption"><h3>Capuchino</h3></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Capuchino Italiano</h3>
+                <p>Espumoso y sabroso.</p>
+                <table class="table table-sm text-white">
+                  <tr><td>Regular</td><td>$50</td></tr>
+                  <tr><td>Vainilla</td><td>$55</td></tr>
+                  <tr><td>Caramelo</td><td>$55</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" alt="Cheesecake">
+                <div class="front-caption"><h3>Cheesecake</h3></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Cheesecake</h3>
+                <p>Base de galleta y salsa de frutos rojos opcional.</p>
+                <table class="table table-sm text-white">
+                  <tr><td>Rebanada</td><td>$65</td></tr>
+                  <tr><td>Entero</td><td>$450</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.unsplash.com/photo-1578899952107-9c390f1af1b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhaSUyMGxhdHRlfGVufDB8fDB8fHwy" alt="Té Chai">
+                <div class="front-caption"><h3>Chai Latte</h3></div>
+              </div>
+              <div class="flip-card-back">
+                <h3>Chai Latte Especiado</h3>
+                <p>Mezcla de té negro, cardamomo, jengibre y leche (con y sin lactosa).</p>
+                <table class="table table-sm text-white">
+                  <tr><td>Caliente</td><td>$60</td></tr>
+                  <tr><td>Frío</td><td>$65</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section x-show="tab=='articulos'" x-transition.opacity>
+      <h2 class="section-title">Blog y Novedades</h2>
+      
+      <div class="row g-4 mt-2">
+        
+        <div class="col-12">
+          <article class="article-card shadow-sm h-100 p-4 border border-1">
+            <div class="row align-items-center">
+              <div class="col-md-5 mb-3 mb-md-0">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded" alt="Nuestra cafetería">
+              </div>
+              <div class="col-md-7">
+                <span class="article-date">Nuestra Historia</span>
+                <h3 class="mt-2">El comienzo de un sueño de emprendimiento</h3>
+                <p class="text-muted">Café Enchilado nació con una misión simple: crear un espacio acogedor donde uno se sienta tranquilo y pueda liberar el estrés, despertar o platicar sin prisas.
+                </p><br>
+                <p>Comenzamos como un equipo de estudiantes que les encanta tomar cafecito para poder aguantar el trabajo, las tareas diarias y proyectos universitarios. La idea de tener un lugar relajante donde se pueda servir productos y tener un ingreso extra sonaba realizable. Y hoy, tenemos nuestro propio local ficticio que se representa en este sitio.</p></p>
+                <p><strong>Misión:</strong> Servir café de especialidad, apoyando a productores locales, y proveer un espacio de relajación.</p>
+                <blockquote class="blockquote fs-6 border-start border-4 border-dark ps-3 fst-italic">
+                  "La vida es dura, pero el café es bueno."
+                </blockquote>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="article-card shadow-sm h-100 p-4">
+            <span class="article-date">Guía de Café</span>
+            <h3 class="mt-2 h4">¿Qué es un espresso perfecto?</h3>
+            <p>Un espresso perfecto es aquel que cumple con ciertos estándares de calidad en términos de sabor, aroma, textura y presentación. Para lograrlo, se deben seguir ciertas pautas y utilizar los equipos correctos.</p>
+            <a href="https://despistecafe.es/cafe-espresso-perfecto/#:~:text=Un%20espresso%20perfecto%20es%20aquel%20que%20cumple%20con,seguir%20ciertas%20pautas%20y%20utilizar%20los%20equipos%20correctos." class="text-decoration-none fw-bold" style="color: var(--color-primary);">Leer más →</a>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="article-card shadow-sm h-100 p-4">
+            <span class="article-date">Origen</span>
+            <h3 class="mt-2 h4">De la finca a tu taza</h3>
+            <p>Cada sorbo de café es el resultado de un largo viaje. El grano que llega a tu taza ha pasado por muchas etapas: cultivo, cosecha, procesamiento, secado, tueste, y por supuesto: fermentación.</p>
+            <a href="https://fermento.academy/del-arbusto-a-la-taza-el-proceso-de-elaboracion-del-cafe/#:~:text=Cada%20sorbo%20de%20caf%C3%A9%20es%20el%20resultado%20de,cada%20paso%20es%20clave%20para%20el%20sabor.%201." class="text-decoration-none fw-bold" style="color: var(--color-primary);">Leer más →</a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section x-show="tab=='galeria'" x-transition.opacity>
+      <h2 class="section-title">Galería</h2>
+      <div class="row g-3 mt-4">
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded shadow-sm w-100" style="height: 300px; object-fit: cover;" alt="Barista">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded shadow-sm w-100" style="height: 300px; object-fit: cover;" alt="Ambiente">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded shadow-sm w-100" style="height: 300px; object-fit: cover;" alt="Detalles">
+        </div>
+        <div class="col-md-8">
+          <img src="https://images.unsplash.com/photo-1612346903007-b5ac8bb135bb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded shadow-sm w-100" style="height: 300px; object-fit: cover;" alt="Granos">
+        </div>
+        <div class="col-md-4">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" class="img-fluid rounded shadow-sm w-100" style="height: 300px; object-fit: cover;" alt="Panadería">
+        </div>
+      </div>
+    </section>
+
+    <section x-show="tab=='contacto'" x-transition.opacity>
+      <h2 class="section-title">Visítanos</h2>
+      
+      <div class="row mt-5">
+        <div class="col-lg-6 mb-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h4 class="card-title">Ubicación y Horarios</h4>
+              <p class="text-muted mb-4"><i class="bi bi-geo-alt-fill"></i> Breite Str. 89, 23552 Lübeck</p>
+              
+              <div class="ratio ratio-16x9 mb-4 rounded overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.6679391029934!2d10.683213976382532!3d53.866552435673746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b20959e7fc24f3%3A0xe0040e6307d0ff32!2sBreite%20Str.%2089%2C%2023552%20L%C3%BCbeck!5e0!3m2!1ses-419!2sde!4v1764691776987!5m2!1ses-419!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+
+              <h5 class="mb-3">Horario de Atención</h5>
+              <table class="table table-striped">
+                <tbody>
+                  <tr><td>Lunes - Viernes</td><td class="text-end">6:00 AM - 5:00 PM</td></tr>
+                  <tr><td>Sábado</td><td class="text-end">9:00 AM - 9:00 PM</td></tr>
+                  <tr><td>Domingo</td><td class="text-end">10:00 AM - 2:00 PM</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="card shadow-sm h-100 border-0 bg-light">
+            <div class="card-body p-4">
+              <h4 class="card-title mb-4">Contáctanos</h4>
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nombre completo</label>
+                  <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark w-100 py-2">Enviar Mensaje</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    
+  </div>
+
+  <footer class="mt-auto">
+    <div class="container text-center">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-md-start">
+          <p class="mb-0">© 2025 Café Enchilado</p>
+        </div>
+        <div class="col-md-4 my-2">
+          <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="icon" width="40" class="opacity-50">
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a href="#un insta" class="me-2">Instagram</a>
+          <a href="#un feis">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
